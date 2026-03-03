@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Gun Cheats — Читы и Моды 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Russo+One&family=Inter:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-orange: #ff6a00;
+            --neon-yellow: #ffd000;
+            --neon-red: #ff2d55;
+            --neon-cyan: #00f0ff;
+            --neon-green: #39ff14;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-border: #1e1e2e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: #e0e0e0;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* ============ ANIMATED BACKGROUND ============ */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: floatUp linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* ============ GRID OVERLAY ============ */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(255, 106, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 106, 0, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: perspective(500px) rotateX(0deg); }
+            100% { transform: perspective(500px) rotateX(1deg); }
+        }
+
+        /* ============ CUSTOM CURSOR TRAIL ============ */
+        .cursor-trail {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: screen;
+            transition: transform 0.1s;
+        }
+
+        /* ============ NAVBAR ============ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 106, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 40px;
+            background: rgba(10, 10, 15, 0.95);
+            box-shadow: 0 5px 30px rgba(255, 106, 0, 0.1);
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo .chicken-icon {
+            font-size: 2rem;
+            -webkit-text-fill-color: initial;
+            animation: chickenBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes chickenBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(-5deg); }
+            75% { transform: translateY(-3px) rotate(5deg); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-orange);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--neon-orange);
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-orange);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--neon-orange);
+            transition: all 0.3s ease;
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(255, 106, 0, 0.1);
+            border: 1px solid rgba(255, 106, 0, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--neon-orange);
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--neon-green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.4); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 10px rgba(57, 255, 20, 0); }
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-yellow), var(--neon-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn-primary {
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-red));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 106, 0, 0.4);
+        }
+
+        .btn-secondary {
+            padding: 16px 40px;
+            background: transparent;
+            color: var(--neon-orange);
+            border: 2px solid rgba(255, 106, 0, 0.5);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 106, 0, 0.1);
+            border-color: var(--neon-orange);
+            transform: translateY(-3px);
+        }
+
+        /* Hero floating elements */
+        .hero-float {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.15;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-float:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .hero-float:nth-child(2) { top: 60%; right: 10%; animation-delay: 2s; }
+        .hero-float:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 4s; }
+        .hero-float:nth-child(4) { top: 30%; right: 15%; animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* ============ STATS BAR ============ */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .stat-item {
+            padding: 40px 20px;
+            text-align: center;
+            background: var(--dark-bg);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 106, 0, 0.05);
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--neon-orange);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 8px;
+        }
+
+        /* ============ SECTION STYLES ============ */
+        section {
+            padding: 100px 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.8rem;
+            color: var(--neon-orange);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Russo One', sans-serif;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .section-desc {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============ CHEATS GRID ============ */
+        .cheats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cheat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 35px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .cheat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-orange), var(--neon-yellow));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .cheat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cheat-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 106, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                        0 0 40px rgba(255, 106, 0, 0.1);
+        }
+
+        .cheat-card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .cheat-card-icon.aimbot { background: rgba(255, 45, 85, 0.15); }
+        .cheat-card-icon.wallhack { background: rgba(0, 240, 255, 0.15); }
+        .cheat-card-icon.speed { background: rgba(57, 255, 20, 0.15); }
+        .cheat-card-icon.money { background: rgba(255, 208, 0, 0.15); }
+        .cheat-card-icon.god { background: rgba(255, 106, 0, 0.15); }
+        .cheat-card-icon.fly { background: rgba(147, 51, 234, 0.15); }
+
+        .cheat-card h3 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .cheat-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .cheat-card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-free {
+            background: rgba(57, 255, 20, 0.1);
+            color: var(--neon-green);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+        }
+
+        .tag-hot {
+            background: rgba(255, 45, 85, 0.1);
+            color: var(--neon-red);
+            border: 1px solid rgba(255, 45, 85, 0.2);
+        }
+
+        .tag-new {
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--neon-cyan);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .tag-updated {
+            background: rgba(255, 208, 0, 0.1);
+            color: var(--neon-yellow);
+            border: 1px solid rgba(255, 208, 0, 0.2);
+        }
+
+        /* ============ DOWNLOAD SECTION ============ */
+        #download {
+            background: linear-gradient(180deg, var(--dark-bg), #0d0d14, var(--dark-bg));
+        }
+
+        .download-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .download-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .download-card.featured {
+            border-color: rgba(255, 106, 0, 0.4);
+            background: linear-gradient(135deg, rgba(255, 106, 0, 0.05), rgba(255, 45, 85, 0.05));
+        }
+
+        .download-card.featured::before {
+            content: '⭐ РЕКОМЕНДУЕМ';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-red));
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .download-card .version {
+            font-family: 'Orbitron', monospace;
+            font-size: 1rem;
+            color: var(--neon-orange);
+            margin-bottom: 10px;
+        }
+
+        .download-card h3 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .download-card .features-list {
+            list-style: none;
+            margin: 20px 0 30px;
+            text-align: left;
+        }
+
+        .download-card .features-list li {
+            padding: 8px 0;
+            color: #888;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .download-card .features-list li .check {
+            color: var(--neon-green);
+            font-weight: bold;
+        }
+
+        .download-card .features-list li .cross {
+            color: var(--neon-red);
+            font-weight: bold;
+        }
+
+        .btn-download {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-download.primary {
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-red));
+            color: white;
+        }
+
+        .btn-download.primary:hover {
+            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-download.secondary {
+            background: rgba(255, 106, 0, 0.1);
+            color: var(--neon-orange);
+            border: 1px solid rgba(255, 106, 0, 0.3);
+        }
+
+        .btn-download.secondary:hover {
+            background: rgba(255, 106, 0, 0.2);
+        }
+
+        /* ============ HOW TO SECTION ============ */
+        .steps-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--neon-orange), var(--neon-red), transparent);
+        }
+
+        .step {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideIn 0.6s ease forwards;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.3s; }
+        .step:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 2px solid var(--neon-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--neon-orange);
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-content {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 25px;
+            flex: 1;
+        }
+
+        .step-content h3 {
+            font-family: 'Russo One', sans-serif;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ============ FAQ ============ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 106, 0, 0.2);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--neon-orange);
+        }
+
+        .faq-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: var(--neon-orange);
+        }
+
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 30px 25px;
+        }
+
+        .faq-answer p {
+            color: #888;
+            line-height: 1.8;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            padding: 60px 40px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .footer-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .footer-brand p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-column h4 {
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #555;
+            text-decoration: none;
+            padding: 5px 0;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--neon-orange);
+            padding-left: 10px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #444;
+            font-size: 0.85rem;
+        }
+
+        /* ============ SCROLL TO TOP ============ */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-red));
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.4);
+        }
+
+        /* ============ MODAL ============ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            animation: modalIn 0.4s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal h2 {
+            font-family: 'Russo One', sans-serif;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .modal p {
+            color: #888;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .modal .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .modal .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-orange), var(--neon-green));
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .modal .progress-text {
+            font-family: 'Orbitron', monospace;
+            color: var(--neon-orange);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ============ NOTIFICATIONS ============ */
+        .notification {
+            position: fixed;
+            top: 90px;
+            right: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-left: 4px solid var(--neon-green);
+            border-radius: 12px;
+            padding: 20px 25px;
+            z-index: 9999;
+            transform: translateX(400px);
+            transition: transform 0.4s ease;
+            max-width: 350px;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification h4 {
+            color: white;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .notification p {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* ============ TYPING EFFECT ============ */
+        .typing-text {
+            border-right: 2px solid var(--neon-orange);
+            animation: blink 0.8s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .cheats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 15, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                border-bottom: 1px solid var(--card-border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .download-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .notification {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+
+        /* ============ GLITCH EFFECT ============ */
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            animation: glitch-1 2s infinite linear alternate-reverse;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            -webkit-text-fill-color: var(--neon-red);
+            opacity: 0.8;
+        }
+
+        .glitch::after {
+            animation: glitch-2 3s infinite linear alternate-reverse;
+            clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+            -webkit-text-fill-color: var(--neon-cyan);
+            opacity: 0.8;
+        }
+
+        @keyframes glitch-1 {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-3px); }
+            40% { transform: translateX(3px); }
+            60% { transform: translateX(-1px); }
+            80% { transform: translateX(2px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes glitch-2 {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(3px); }
+            40% { transform: translateX(-2px); }
+            60% { transform: translateX(1px); }
+            80% { transform: translateX(-3px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Easter egg */
+        .konami-activated {
+            animation: rainbow 2s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-orange);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-red);
+        }
+
+        /* Selection */
+        ::selection {
+            background: rgba(255, 106, 0, 0.3);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Animation -->
+    <div class="bg-animation" id="bgAnimation"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo">
+            <span class="chicken-icon">🐔</span>
+            CG CHEATS
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#cheats">Читы</a></li>
+            <li><a href="#download">Скачать</a></li>
+            <li><a href="#howto">Инструкция</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-float">🔫</div>
+        <div class="hero-float">🎯</div>
+        <div class="hero-float">💎</div>
+        <div class="hero-float">🐓</div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Обновлено для версии 3.9.2 — 2025
+            </div>
+            <h1>
+                <span class="gradient-text glitch" data-text="CHICKEN GUN">CHICKEN GUN</span>
+                <br>
+                <span id="typingTarget" class="typing-text"></span>
+            </h1>
+            <p>
+                Лучшие читы, моды и хаки для Chicken Gun. 
+                Бесплатно, без вирусов, с автообновлением. 
+                Доминируй на сервере! 🔥
+            </p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn-primary">
+                    ⬇️ Скачать Чит
+                </a>
+                <a href="#cheats" class="btn-secondary">
+                    📋 Все функции
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item fade-in">
+            <span class="stat-number" data-target="258431">0</span>
+            <span class="stat-label">Скачиваний</span>
+        </div>
+        <div class="stat-item fade-in">
+            <span class="stat-number" data-target="15892">0</span>
+            <span class="stat-label">Активных юзеров</span>
+        </div>
+        <div class="stat-item fade-in">
+            <span class="stat-number" data-target="99">0</span>
+            <span class="stat-label">% Анти-бан</span>
+        </div>
+        <div class="stat-item fade-in">
+            <span class="stat-number" data-target="24">0</span>
+            <span class="stat-label">Функций</span>
+        </div>
+    </div>
+
+    <!-- Cheats Section -->
+    <section id="cheats">
+        <div class="section-header fade-in">
+            <span class="section-tag">// Функционал</span>
+            <h2 class="section-title">Наши читы 🐔</h2>
+            <p class="section-desc">Полный арсенал для доминирования в Chicken Gun</p>
+        </div>
+
+        <div class="cheats-grid">
+            <div class="cheat-card fade-in">
+                <div class="cheat-card-icon aimbot">🎯</div>
+                <h3>Aimbot</h3>
+                <p>Автоматическое наведение на врагов. Настраиваемая скорость, FOV и выбор кости для прицеливания.</p>
+                <div class="cheat-card-tags">
+                    <span class="tag tag-hot">🔥 Хит</span>
+                    <span class="tag tag-free">Бесплатно</span>
+                </div>
+            </div>
+
+            <div class="cheat-card fade-in">
+                <div class="cheat-card-icon wallhack">👁️</div>
+                <h3>WallHack / ESP</h3>
+                <p>Видь врагов через стены. Отображение HP, никнеймов, расстояния и оружия противника.</p>
+                <div class="cheat-card-tags">
+                    <span class="tag tag-hot">🔥 Хит</span>
+                    <span class="tag tag-updated">Обновлено</span>
+                </div>
+            </div>
+
+            <div class="cheat-card fade-in">
+                <div class="cheat-card-icon speed">⚡</div>
+                <h3>Speed Hack</h3>
+                <p>Увеличение скорости передвижения. Настраиваемый множитель от x1.5 до x10.</p>
+                <div class="cheat-card-tags">
+                    <span class="tag tag-free">Бесплатно</span>
+                    <span class="tag tag-new">Новое</span>
+                </div>
+            </div>
+
+            <div class="cheat-card fade-in">
+                <div class="cheat-card-icon money">💰</div>
+                <h3>Много денег & скинов</h3>
+                <p>Бесконечные монеты и гемы. Разблокировка всех скинов, оружия и транспорта.</p>
+                <div class="cheat-card-tags">
+                    <span class="tag tag-hot">🔥 Хит</span>
+                    <span class="tag tag-updated">Обновлено</span>
+                </div>
+            </div>
+
+            <div class="cheat-card fade-in">
+                <div class="cheat-card-icon god">🛡️</div>
+                <h3>God Mode</h3>
+                <p>Режим бога — бесконечное HP, бессмертие. Полная неуязвимость к любому урону.</p>
+                <div class="cheat-card-tags">
+                    <span class="tag tag-free">Бесплатно</span>
+                    <span class="tag tag-hot">🔥 Хит</span>
+                </div>
+            </div>
+
+            <div class="cheat-card fade-in">
+                <div class="cheat-card-icon fly">🚀</div>
+                <h3>Fly Hack</h3>
+                <p>Свободный полёт по карте. Контролируй высоту и скорость. Летай куда хочешь!</p>
+                <div class="cheat-card-tags">
+                    <span class="tag tag-new">Новое</span>
+                    <span class="tag tag-free">Бесплатно</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download">
+        <div class="section-header fade-in">
+            <span class="section-tag">// Скачать</span>
+            <h2 class="section-title">Выбери свой чит 📦</h2>
+            <p class="section-desc">Все версии бесплатные и проверены на вирусы</p>
+        </div>
+
+        <div class="download-cards">
+            <div class="download-card fade-in">
+                <div class="version">v3.9.2</div>
+                <h3>Basic Mod</h3>
+                <ul class="features-list">
+                    <li><span class="check">✓</span> Aimbot (базовый)</li>
+                    <li><span class="check">✓</span> WallHack</li>
+                    <li><span class="check">✓</span> Speed Hack</li>
+                    <li><span class="cross">✗</span> God Mode</li>
+                    <li><span class="cross">✗</span> Fly Hack</li>
+                    <li><span class="cross">✗</span> Все скины</li>
+                </ul>
+                <button class="btn-download secondary" onclick="startDownload('Basic Mod')">
+                    ⬇️ Скачать Basic
+                </button>
+            </div>
+
+            <div class="download-card featured fade-in">
+                <div class="version">v3.9.2 PRO</div>
+                <h3>Full Mod Menu</h3>
+                <ul class="features-list">
+                    <li><span class="check">✓</span> Aimbot (продвинутый)</li>
+                    <li><span class="check">✓</span> WallHack + ESP</li>
+                    <li><span class="check">✓</span> Speed Hack</li>
+                    <li><span class="check">✓</span> God Mode</li>
+                    <li><span class="check">✓</span> Fly Hack</li>
+                    <li><span class="check">✓</span> Все скины + деньги</li>
+                </ul>
+                <button class="btn-download primary" onclick="startDownload('Full Mod Menu')">
+                    🔥 Скачать PRO
+                </button>
+            </div>
+
+            <div class="download-card fade-in">
+                <div class="version">v3.9.2</div>
+                <h3>Stealth Mod</h3>
+                <ul class="features-list">
+                    <li><span class="check">✓</span> Silent Aimbot</li>
+                    <li><span class="check">✓</span> Soft WallHack</li>
+                    <li><span class="check">✓</span> Анти-бан система</li>
+                    <li><span class="check">✓</span> Скрытый режим</li>
+                    <li><span class="cross">✗</span> Fly Hack</li>
+                    <li><span class="cross">✗</span> God Mode</li>
+                </ul>
+                <button class="btn-download secondary" onclick="startDownload('Stealth Mod')">
+                    🥷 Скачать Stealth
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How To Section -->
+    <section id="howto">
+        <div class="section-header fade-in">
+            <span class="section-tag">// Инструкция</span>
+            <h2 class="section-title">Как установить? 🛠️</h2>
+            <p class="section-desc">Установка занимает всего 2 минуты</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Скачай APK файл</h3>
+                    <p>Нажми кнопку "Скачать" выше и дождись завершения загрузки мод-файла на своё устройство.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Разреши установку</h3>
+                    <p>Перейди в Настройки → Безопасность → Включи "Неизвестные источники" для установки APK.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>Установи мод</h3>
+                    <p>Открой скачанный APK файл и нажми "Установить". Дождись завершения установки.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h3>Запусти и играй! 🎮</h3>
+                    <p>Открой игру. Мод-меню появится в левом верхнем углу. Включай нужные функции и доминируй!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="section-header fade-in">
+            <span class="section-tag">// Вопросы</span>
+            <h2 class="section-title">FAQ ❓</h2>
+            <p class="section-desc">Ответы на частые вопросы</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Это безопасно? Не забанят?</span>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Наши моды имеют встроенную анти-бан систему. За 2 года работы процент банов менее 1%. Stealth версия ещё безопаснее!</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Работает на iOS?</span>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Пока моды доступны только для Android. Версия для iOS находится в разработке и будет доступна в ближайшее время.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Это бесплатно?</span>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Да! Все три версии полностью бесплатны. Никаких скрытых платежей, подписок или SMS.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Нужен ли Root?</span>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Нет, Root права не нужны. Мод работает на любом Android устройстве версии 5.0 и выше без Root.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Как обновлять чит?</span>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>При выходе обновления игры мы обновляем мод в течение 24 часов. Просто скачай новую версию с сайта!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">🐔 CG CHEATS</span>
+                <p>Лучшие читы для Chicken Gun с 2023 года. Бесплатно, безопасно, с любовью к комьюнити.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Навигация</h4>
+                <a href="#cheats">Читы</a>
+                <a href="#download">Скачать</a>
+                <a href="#howto">Инструкция</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-column">
+                <h4>Моды</h4>
+                <a href="#">Basic Mod</a>
+                <a href="#">Full Mod Menu</a>
+                <a href="#">Stealth Mod</a>
+            </div>
+            <div class="footer-column">
+                <h4>Соцсети</h4>
+                <a href="#">Telegram</a>
+                <a href="#">YouTube</a>
+                <a href="#">Discord</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 CG Cheats. Все права защищены.</span>
+            <span>Сделано с 🧡 для Chicken Gun комьюнити</span>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Download Modal -->
+    <div class="modal-overlay" id="downloadModal">
+        <div class="modal">
+            <h2 id="modalTitle">⬇️ Загрузка...</h2>
+            <p id="modalDesc">Подготовка файла к скачиванию</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">0%</span>
+            <br>
+            <button class="modal-close" id="modalClose" onclick="closeModal()" style="display:none;">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <h4>🎉 Новый пользователь!</h4>
+        <p id="notifText">Кто-то только что скачал Full Mod Menu</p>
+    </div>
+
+    <script>
+        // ============ PARTICLE BACKGROUND ============
+        function createParticles() {
+            const bg = document.getElementById('bgAnimation');
+            const colors = ['#ff6a00', '#ffd000', '#ff2d55', '#00f0ff', '#39ff14'];
+
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 4 + 2;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.cssText = `
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${Math.random() * 100}%;
+                    background: ${color};
+                    box-shadow: 0 0 ${size * 2}px ${color};
+                    animation-duration: ${Math.random() * 10 + 8}s;
+                    animation-delay: ${Math.random() * 10}s;
+                `;
+                bg.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // ============ NAVBAR SCROLL ============
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const scrollTop = document.getElementById('scrollTop');
+
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 500) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // ============ MOBILE MENU ============
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // ============ SMOOTH SCROLL ============
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============ TYPING EFFECT ============
+        const typingTexts = ['ЧИТЫ & МОДЫ 2025', 'MOD MENU', 'AIMBOT + ESP', 'БЕСПЛАТНО!'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingTarget = document.getElementById('typingTarget');
+
+        function typeEffect() {
+            const currentText = typingTexts[textIndex];
+
+            if (!isDeleting) {
+                typingTarget.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 2000);
+                    return;
+                }
+            } else {
+                typingTarget.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % typingTexts.length;
+                }
+            }
+
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+        typeEffect();
+
+        // ============ COUNTER ANIMATION ============
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number[data-target]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 20);
+            });
+        }
+
+        // ============ SCROLL ANIMATIONS ============
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Start counter animation when stats are visible
+                    if (entry.target.querySelector('.stat-number')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // ============ FAQ TOGGLE ============
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Open clicked (if wasn't active)
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // ============ DOWNLOAD MODAL ============
+        function startDownload(modName) {
+            const modal = document.getElementById('downloadModal');
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDesc = document.getElementById('modalDesc');
+            const modalClose = document.getElementById('modalClose');
+
+            modal.classList.add('active');
+            modalTitle.textContent = `⬇️ Загрузка ${modName}`;
+            modalDesc.textContent = 'Подготовка файла...';
+            modalClose.style.display = 'none';
+            progressFill.style.width = '0%';
+
+            let progress = 0;
+            const messages = [
+                { at: 10, text: 'Подключение к серверу...' },
+                { at: 30, text: 'Загрузка файлов мода...' },
+                { at: 50, text: 'Проверка на вирусы...' },
+                { at: 70, text: 'Упаковка APK...' },
+                { at: 90, text: 'Почти готово...' },
+            ];
+
+            const interval = setInterval(() => {
+                progress += Math.random() * 3 + 1;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    modalTitle.textContent = '✅ Готово!';
+                    modalDesc.textContent = `${modName} готов к скачиванию!`;
+                    modalClose.style.display = 'inline-block';
+                    modalClose.textContent = '📥 Сохранить файл';
+                }
+
+                progressFill.style.width = progress + '%';
+                progressText.textContent = Math.floor(progress) + '%';
+
+                messages.forEach(msg => {
+                    if (progress >= msg.at && progress < msg.at + 5) {
+                        modalDesc.textContent = msg.text;
+                    }
+                });
+            }, 80);
+        }
+
+        function closeModal() {
+            document.getElementById('downloadModal').classList.remove('active');
+        }
+
+        // Close modal on overlay click
+        document.getElementById('downloadModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeModal();
+        });
+
+        // ============ FAKE NOTIFICATIONS ============
+        const fakeUsers = [
+            'Артём из Москвы', 'Даня из Питера', 'Влад из Киева',
+            'Максим из Минска', 'Кирилл из Казани', 'Дима из Екб',
+            'Саша из Новосиба', 'Никита из Самары', 'Егор из Краснодара'
+        ];
+        const fakeMods = ['Basic Mod', 'Full Mod Menu', 'Stealth Mod'];
+
+        function showNotification() {
+            const notif = document.getElementById('notification');
+            const notifText = document.getElementById('notifText');
+            const user = fakeUsers[Math.floor(Math.random() * fakeUsers.length)];
+            const mod = fakeMods[Math.floor(Math.random() * fakeMods.length)];
+
+            notifText.textContent = `${user} скачал ${mod}`;
+            notif.classList.add('show');
+
+            setTimeout(() => {
+                notif.classList.remove('show');
+            }, 4000);
+        }
+
+        // Show first notification after 5s, then every 15-30s
+        setTimeout(() => {
+            showNotification();
+            setInterval(showNotification, Math.random() * 15000 + 15000);
+        }, 5000);
+
+        // ============ KONAMI CODE EASTER EGG ============
+        let konamiCode = [];
+        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
+                document.body.classList.toggle('konami-activated');
+                showNotification();
+                document.getElementById('notifText').textContent = '🎮 Konami Code активирован! Ты легенда!';
+            }
+        });
+
+        // ============ CURSOR GLOW EFFECT ============
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.createElement('div');
+            glow.className = 'cursor-trail';
+            glow.style.left = e.clientX - 10 + 'px';
+            glow.style.top = e.clientY - 10 + 'px';
+            glow.style.background = `radial-gradient(circle, rgba(255,106,0,0.3), transparent)`;
+            document.body.appendChild(glow);
+
+            setTimeout(() => glow.remove(), 500);
+        });
+
+        // ============ CARD TILT EFFECT ============
+        document.querySelectorAll('.cheat-card, .download-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Prevent right click (optional flex)
+        // document.addEventListener('contextmenu', e => e.preventDefault());
+
+        console.log('%c🐔 CG CHEATS', 'font-size: 30px; color: #ff6a00; font-weight: bold;');
+        console.log('%cСайт создан для Chicken Gun комьюнити', 'font-size: 14px; color: #888;');
+    </script>
+
+</body>
+</html>
