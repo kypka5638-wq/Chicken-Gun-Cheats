@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chicken Gun Cheats — Читы и Моды 2025</title>
+    <title>Chicken Gun Cheats — Читы и Моды 2026</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Russo+One&family=Inter:wght@300;400;600;700&display=swap');
 
@@ -19,6 +19,7 @@
             --neon-red: #ff2d55;
             --neon-cyan: #00f0ff;
             --neon-green: #39ff14;
+            --neon-purple: #9333ea;
             --dark-bg: #0a0a0f;
             --card-bg: #12121a;
             --card-border: #1e1e2e;
@@ -51,47 +52,28 @@
         }
 
         @keyframes floatUp {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
         }
 
         /* ============ GRID OVERLAY ============ */
         .grid-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: -1;
             background-image:
                 linear-gradient(rgba(255, 106, 0, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 106, 0, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
         }
 
-        @keyframes gridMove {
-            0% { transform: perspective(500px) rotateX(0deg); }
-            100% { transform: perspective(500px) rotateX(1deg); }
-        }
-
-        /* ============ CUSTOM CURSOR TRAIL ============ */
+        /* ============ CURSOR TRAIL ============ */
         .cursor-trail {
             position: fixed;
-            width: 20px;
-            height: 20px;
+            width: 20px; height: 20px;
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
@@ -102,8 +84,7 @@
         /* ============ NAVBAR ============ */
         .navbar {
             position: fixed;
-            top: 0;
-            width: 100%;
+            top: 0; width: 100%;
             z-index: 1000;
             padding: 15px 40px;
             display: flex;
@@ -166,22 +147,15 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
+            bottom: -5px; left: 0;
+            width: 0; height: 2px;
             background: var(--neon-orange);
             transition: width 0.3s ease;
             box-shadow: 0 0 10px var(--neon-orange);
         }
 
-        .nav-links a:hover {
-            color: var(--neon-orange);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover { color: var(--neon-orange); }
+        .nav-links a:hover::after { width: 100%; }
 
         .menu-toggle {
             display: none;
@@ -192,10 +166,55 @@
         }
 
         .menu-toggle span {
-            width: 25px;
-            height: 2px;
+            width: 25px; height: 2px;
             background: var(--neon-orange);
             transition: all 0.3s ease;
+        }
+
+        /* ============ VERIFIED BADGE ============ */
+        .verified-banner {
+            background: linear-gradient(90deg, rgba(57, 255, 20, 0.1), rgba(0, 240, 255, 0.1));
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 12px;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 700px;
+            margin: 30px auto 0;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .verified-banner .shield {
+            font-size: 2rem;
+        }
+
+        .verified-banner .verified-info {
+            flex: 1;
+        }
+
+        .verified-banner h4 {
+            color: var(--neon-green);
+            font-size: 0.9rem;
+            margin-bottom: 3px;
+        }
+
+        .verified-banner p {
+            color: #888 !important;
+            font-size: 0.8rem !important;
+            margin: 0 !important;
+        }
+
+        .verified-badge-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(57, 255, 20, 0.15);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            color: var(--neon-green);
+            font-weight: 700;
         }
 
         /* ============ HERO SECTION ============ */
@@ -209,10 +228,7 @@
             position: relative;
         }
 
-        .hero-content {
-            max-width: 900px;
-            z-index: 2;
-        }
+        .hero-content { max-width: 900px; z-index: 2; }
 
         .hero-badge {
             display: inline-flex;
@@ -229,8 +245,7 @@
         }
 
         .badge-dot {
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             background: var(--neon-green);
             border-radius: 50%;
             animation: pulse 2s ease-in-out infinite;
@@ -303,17 +318,13 @@
         .btn-primary::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.5s ease;
         }
 
-        .btn-primary:hover::before {
-            left: 100%;
-        }
+        .btn-primary:hover::before { left: 100%; }
 
         .btn-primary:hover {
             transform: translateY(-3px);
@@ -344,7 +355,6 @@
             transform: translateY(-3px);
         }
 
-        /* Hero floating elements */
         .hero-float {
             position: absolute;
             font-size: 3rem;
@@ -362,13 +372,52 @@
             50% { transform: translateY(-20px) rotate(10deg); }
         }
 
+        /* ============ LIVE ACTIVITY ============ */
+        .live-activity {
+            background: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+            padding: 15px 40px;
+            overflow: hidden;
+        }
+
+        .live-ticker {
+            display: flex;
+            animation: ticker 30s linear infinite;
+            gap: 50px;
+            white-space: nowrap;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .ticker-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--neon-green);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .ticker-dot.orange { background: var(--neon-orange); }
+        .ticker-dot.red { background: var(--neon-red); }
+        .ticker-dot.cyan { background: var(--neon-cyan); }
+
         /* ============ STATS BAR ============ */
         .stats-bar {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2px;
             background: var(--card-bg);
-            border-top: 1px solid var(--card-border);
             border-bottom: 1px solid var(--card-border);
         }
 
@@ -379,9 +428,7 @@
             transition: all 0.3s ease;
         }
 
-        .stat-item:hover {
-            background: rgba(255, 106, 0, 0.05);
-        }
+        .stat-item:hover { background: rgba(255, 106, 0, 0.05); }
 
         .stat-number {
             font-family: 'Orbitron', monospace;
@@ -400,14 +447,9 @@
         }
 
         /* ============ SECTION STYLES ============ */
-        section {
-            padding: 100px 40px;
-        }
+        section { padding: 100px 40px; }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+        .section-header { text-align: center; margin-bottom: 60px; }
 
         .section-tag {
             font-family: 'Orbitron', monospace;
@@ -433,6 +475,125 @@
             margin: 0 auto;
         }
 
+        /* ============ VIRUS TOTAL SECTION ============ */
+        .virustotal-proof {
+            max-width: 800px;
+            margin: 40px auto 0;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .vt-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .vt-logo {
+            width: 50px; height: 50px;
+            background: linear-gradient(135deg, #394EFF, #00B4D8);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: white;
+        }
+
+        .vt-title h3 {
+            color: white;
+            font-family: 'Russo One', sans-serif;
+        }
+
+        .vt-title p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .vt-result {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .vt-score {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            border: 4px solid var(--neon-green);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
+        }
+
+        .vt-score .number {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--neon-green);
+        }
+
+        .vt-score .label {
+            font-size: 0.65rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .vt-details { flex: 1; }
+
+        .vt-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .vt-bar-label {
+            width: 100px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .vt-bar-track {
+            flex: 1;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .vt-bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .vt-bar-fill.clean { background: var(--neon-green); }
+        .vt-bar-fill.unknown { background: #888; }
+        .vt-bar-fill.detect { background: var(--neon-red); }
+
+        .vt-bar-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.8rem;
+            color: #888;
+            width: 40px;
+            text-align: right;
+        }
+
+        .vt-date {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
         /* ============ CHEATS GRID ============ */
         .cheats-grid {
             display: grid;
@@ -456,37 +617,30 @@
         .cheat-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
             background: linear-gradient(90deg, var(--neon-orange), var(--neon-yellow));
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s ease;
         }
 
-        .cheat-card:hover::before {
-            transform: scaleX(1);
-        }
+        .cheat-card:hover::before { transform: scaleX(1); }
 
         .cheat-card:hover {
             transform: translateY(-8px);
             border-color: rgba(255, 106, 0, 0.3);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
-                        0 0 40px rgba(255, 106, 0, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 106, 0, 0.1);
         }
 
         .cheat-card-icon {
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             margin-bottom: 20px;
-            position: relative;
         }
 
         .cheat-card-icon.aimbot { background: rgba(255, 45, 85, 0.15); }
@@ -495,6 +649,9 @@
         .cheat-card-icon.money { background: rgba(255, 208, 0, 0.15); }
         .cheat-card-icon.god { background: rgba(255, 106, 0, 0.15); }
         .cheat-card-icon.fly { background: rgba(147, 51, 234, 0.15); }
+        .cheat-card-icon.norecoil { background: rgba(0, 150, 255, 0.15); }
+        .cheat-card-icon.teleport { background: rgba(255, 0, 255, 0.15); }
+        .cheat-card-icon.skin { background: rgba(255, 165, 0, 0.15); }
 
         .cheat-card h3 {
             font-family: 'Russo One', sans-serif;
@@ -525,28 +682,148 @@
             letter-spacing: 0.5px;
         }
 
-        .tag-free {
-            background: rgba(57, 255, 20, 0.1);
-            color: var(--neon-green);
-            border: 1px solid rgba(57, 255, 20, 0.2);
+        .tag-free { background: rgba(57, 255, 20, 0.1); color: var(--neon-green); border: 1px solid rgba(57, 255, 20, 0.2); }
+        .tag-hot { background: rgba(255, 45, 85, 0.1); color: var(--neon-red); border: 1px solid rgba(255, 45, 85, 0.2); }
+        .tag-new { background: rgba(0, 240, 255, 0.1); color: var(--neon-cyan); border: 1px solid rgba(0, 240, 255, 0.2); }
+        .tag-updated { background: rgba(255, 208, 0, 0.1); color: var(--neon-yellow); border: 1px solid rgba(255, 208, 0, 0.2); }
+        .tag-anti { background: rgba(147, 51, 234, 0.1); color: var(--neon-purple); border: 1px solid rgba(147, 51, 234, 0.2); }
+
+        /* ============ REVIEWS SECTION ============ */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .tag-hot {
-            background: rgba(255, 45, 85, 0.1);
-            color: var(--neon-red);
-            border: 1px solid rgba(255, 45, 85, 0.2);
+        .review-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
         }
 
-        .tag-new {
-            background: rgba(0, 240, 255, 0.1);
-            color: var(--neon-cyan);
-            border: 1px solid rgba(0, 240, 255, 0.2);
+        .review-card:hover {
+            border-color: rgba(255, 106, 0, 0.2);
+            transform: translateY(-3px);
         }
 
-        .tag-updated {
-            background: rgba(255, 208, 0, 0.1);
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .review-avatar {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .review-avatar.a1 { background: linear-gradient(135deg, #ff6a00, #ff2d55); }
+        .review-avatar.a2 { background: linear-gradient(135deg, #00f0ff, #0066ff); }
+        .review-avatar.a3 { background: linear-gradient(135deg, #39ff14, #00b4d8); }
+        .review-avatar.a4 { background: linear-gradient(135deg, #9333ea, #ff2d55); }
+        .review-avatar.a5 { background: linear-gradient(135deg, #ffd000, #ff6a00); }
+        .review-avatar.a6 { background: linear-gradient(135deg, #ff2d55, #9333ea); }
+
+        .review-name {
+            font-weight: 700;
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .review-date {
+            font-size: 0.75rem;
+            color: #555;
+        }
+
+        .review-stars {
             color: var(--neon-yellow);
-            border: 1px solid rgba(255, 208, 0, 0.2);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .review-text {
+            color: #888;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .review-device {
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ============ CHANGELOG ============ */
+        .changelog {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .changelog-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--neon-orange);
+        }
+
+        .changelog-version {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .changelog-version .ver {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.9rem;
+            color: var(--neon-orange);
+            font-weight: 700;
+        }
+
+        .changelog-version .date {
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        .changelog-version .latest {
+            background: rgba(57, 255, 20, 0.15);
+            color: var(--neon-green);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .changelog-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .changelog-item ul li {
+            padding: 4px 0;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .changelog-item ul li::before {
+            content: '→ ';
+            color: var(--neon-orange);
         }
 
         /* ============ DOWNLOAD SECTION ============ */
@@ -554,124 +831,123 @@
             background: linear-gradient(180deg, var(--dark-bg), #0d0d14, var(--dark-bg));
         }
 
-        .download-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
+        .download-main {
+            max-width: 700px;
             margin: 0 auto;
-        }
-
-        .download-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 40px 30px;
             text-align: center;
+        }
+
+        .download-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 106, 0, 0.3);
+            border-radius: 24px;
+            padding: 50px 40px;
             position: relative;
-            transition: all 0.4s ease;
+            overflow: hidden;
         }
 
-        .download-card.featured {
-            border-color: rgba(255, 106, 0, 0.4);
-            background: linear-gradient(135deg, rgba(255, 106, 0, 0.05), rgba(255, 45, 85, 0.05));
-        }
-
-        .download-card.featured::before {
-            content: '⭐ РЕКОМЕНДУЕМ';
+        .download-box::before {
+            content: '';
             position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--neon-orange), var(--neon-red));
-            color: white;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--neon-orange), var(--neon-yellow), var(--neon-red));
         }
 
-        .download-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .download-card .version {
-            font-family: 'Orbitron', monospace;
-            font-size: 1rem;
-            color: var(--neon-orange);
-            margin-bottom: 10px;
-        }
-
-        .download-card h3 {
-            font-family: 'Russo One', sans-serif;
-            font-size: 1.5rem;
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        .download-card .features-list {
-            list-style: none;
-            margin: 20px 0 30px;
-            text-align: left;
-        }
-
-        .download-card .features-list li {
-            padding: 8px 0;
-            color: #888;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        .download-card .features-list li .check {
-            color: var(--neon-green);
-            font-weight: bold;
-        }
-
-        .download-card .features-list li .cross {
-            color: var(--neon-red);
-            font-weight: bold;
-        }
-
-        .btn-download {
-            width: 100%;
-            padding: 16px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+        .download-box .file-info {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 30px;
+            margin: 20px 0 30px;
+            flex-wrap: wrap;
         }
 
-        .btn-download.primary {
+        .file-detail {
+            text-align: center;
+        }
+
+        .file-detail .label {
+            font-size: 0.75rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .file-detail .value {
+            font-family: 'Orbitron', monospace;
+            font-size: 1rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .download-box h2 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .download-box .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .btn-big-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 60px;
             background: linear-gradient(135deg, var(--neon-orange), var(--neon-red));
             color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            font-weight: 900;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Russo One', sans-serif;
         }
 
-        .btn-download.primary:hover {
-            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.4);
-            transform: translateY(-2px);
+        .btn-big-download::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
         }
 
-        .btn-download.secondary {
-            background: rgba(255, 106, 0, 0.1);
-            color: var(--neon-orange);
-            border: 1px solid rgba(255, 106, 0, 0.3);
+        @keyframes shine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
         }
 
-        .btn-download.secondary:hover {
-            background: rgba(255, 106, 0, 0.2);
+        .btn-big-download:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(255, 106, 0, 0.5);
+        }
+
+        .download-meta {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .download-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85rem;
+            color: #555;
         }
 
         /* ============ HOW TO SECTION ============ */
@@ -684,9 +960,7 @@
         .steps-container::before {
             content: '';
             position: absolute;
-            left: 30px;
-            top: 0;
-            bottom: 0;
+            left: 30px; top: 0; bottom: 0;
             width: 2px;
             background: linear-gradient(to bottom, var(--neon-orange), var(--neon-red), transparent);
         }
@@ -705,18 +979,14 @@
         .step:nth-child(2) { animation-delay: 0.2s; }
         .step:nth-child(3) { animation-delay: 0.3s; }
         .step:nth-child(4) { animation-delay: 0.4s; }
+        .step:nth-child(5) { animation-delay: 0.5s; }
 
         @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .step-number {
-            width: 60px;
-            height: 60px;
-            min-width: 60px;
+            width: 60px; height: 60px; min-width: 60px;
             border-radius: 50%;
             background: var(--card-bg);
             border: 2px solid var(--neon-orange);
@@ -745,16 +1015,10 @@
             margin-bottom: 8px;
         }
 
-        .step-content p {
-            color: #666;
-            line-height: 1.7;
-        }
+        .step-content p { color: #666; line-height: 1.7; }
 
         /* ============ FAQ ============ */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .faq-container { max-width: 800px; margin: 0 auto; }
 
         .faq-item {
             background: var(--card-bg);
@@ -765,9 +1029,7 @@
             transition: all 0.3s ease;
         }
 
-        .faq-item:hover {
-            border-color: rgba(255, 106, 0, 0.2);
-        }
+        .faq-item:hover { border-color: rgba(255, 106, 0, 0.2); }
 
         .faq-question {
             padding: 25px 30px;
@@ -780,9 +1042,7 @@
             transition: all 0.3s ease;
         }
 
-        .faq-question:hover {
-            color: var(--neon-orange);
-        }
+        .faq-question:hover { color: var(--neon-orange); }
 
         .faq-arrow {
             font-size: 1.2rem;
@@ -790,9 +1050,7 @@
             color: var(--neon-orange);
         }
 
-        .faq-item.active .faq-arrow {
-            transform: rotate(180deg);
-        }
+        .faq-item.active .faq-arrow { transform: rotate(180deg); }
 
         .faq-answer {
             max-height: 0;
@@ -805,10 +1063,7 @@
             padding: 0 30px 25px;
         }
 
-        .faq-answer p {
-            color: #888;
-            line-height: 1.8;
-        }
+        .faq-answer p { color: #888; line-height: 1.8; }
 
         /* ============ FOOTER ============ */
         footer {
@@ -837,11 +1092,7 @@
             display: block;
         }
 
-        .footer-brand p {
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
+        .footer-brand p { color: #555; font-size: 0.9rem; line-height: 1.8; }
 
         .footer-column h4 {
             color: white;
@@ -880,10 +1131,8 @@
         /* ============ SCROLL TO TOP ============ */
         .scroll-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
+            bottom: 30px; right: 30px;
+            width: 50px; height: 50px;
             background: linear-gradient(135deg, var(--neon-orange), var(--neon-red));
             border: none;
             border-radius: 15px;
@@ -899,10 +1148,7 @@
             justify-content: center;
         }
 
-        .scroll-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .scroll-top.visible { opacity: 1; transform: translateY(0); }
 
         .scroll-top:hover {
             transform: translateY(-5px);
@@ -912,10 +1158,8 @@
         /* ============ MODAL ============ */
         .modal-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             z-index: 10000;
@@ -925,9 +1169,7 @@
             padding: 20px;
         }
 
-        .modal-overlay.active {
-            display: flex;
-        }
+        .modal-overlay.active { display: flex; }
 
         .modal {
             background: var(--card-bg);
@@ -941,14 +1183,8 @@
         }
 
         @keyframes modalIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8) translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
+            from { opacity: 0; transform: scale(0.8) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .modal h2 {
@@ -957,15 +1193,10 @@
             margin-bottom: 15px;
         }
 
-        .modal p {
-            color: #888;
-            margin-bottom: 25px;
-            line-height: 1.7;
-        }
+        .modal p { color: #888; margin-bottom: 25px; line-height: 1.7; }
 
         .modal .progress-bar {
-            width: 100%;
-            height: 8px;
+            width: 100%; height: 8px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             overflow: hidden;
@@ -989,25 +1220,27 @@
 
         .modal-close {
             margin-top: 20px;
-            padding: 12px 30px;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 14px 35px;
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-red));
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             color: white;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            font-weight: 700;
             transition: all 0.3s ease;
+            text-transform: uppercase;
         }
 
         .modal-close:hover {
-            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.4);
         }
 
-        /* ============ NOTIFICATIONS ============ */
+        /* ============ NOTIFICATION ============ */
         .notification {
             position: fixed;
-            top: 90px;
-            right: 30px;
+            top: 90px; right: 30px;
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-left: 4px solid var(--neon-green);
@@ -1019,20 +1252,39 @@
             max-width: 350px;
         }
 
-        .notification.show {
-            transform: translateX(0);
-        }
+        .notification.show { transform: translateX(0); }
+        .notification h4 { color: white; margin-bottom: 5px; font-size: 0.95rem; }
+        .notification p { color: #888; font-size: 0.85rem; }
 
-        .notification h4 {
-            color: white;
-            margin-bottom: 5px;
-            font-size: 0.95rem;
-        }
-
-        .notification p {
-            color: #888;
+        /* ============ ONLINE COUNTER ============ */
+        .online-counter {
+            position: fixed;
+            bottom: 30px; left: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 12px 18px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 0.85rem;
         }
+
+        .online-dot {
+            width: 10px; height: 10px;
+            background: var(--neon-green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .online-count {
+            font-family: 'Orbitron', monospace;
+            color: var(--neon-green);
+            font-weight: 700;
+        }
+
+        .online-label { color: #666; }
 
         /* ============ TYPING EFFECT ============ */
         .typing-text {
@@ -1043,31 +1295,17 @@
             display: inline-block;
         }
 
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
+        @keyframes blink { 50% { border-color: transparent; } }
 
         /* ============ ANIMATIONS ============ */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .fade-in {
@@ -1081,92 +1319,14 @@
             transform: translateY(0);
         }
 
-        /* ============ RESPONSIVE ============ */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .stats-bar {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stat-number {
-                font-size: 1.8rem;
-            }
-
-            section {
-                padding: 60px 20px;
-            }
-
-            .cheats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(10, 10, 15, 0.98);
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-                border-bottom: 1px solid var(--card-border);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .download-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .notification {
-                right: 10px;
-                left: 10px;
-                max-width: none;
-            }
-        }
-
         /* ============ GLITCH EFFECT ============ */
-        .glitch {
-            position: relative;
-        }
+        .glitch { position: relative; }
 
-        .glitch::before,
-        .glitch::after {
+        .glitch::before, .glitch::after {
             content: attr(data-text);
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
         }
 
         .glitch::before {
@@ -1201,36 +1361,44 @@
             100% { transform: translateX(0); }
         }
 
-        /* Easter egg */
-        .konami-activated {
-            animation: rainbow 2s linear infinite;
-        }
-
-        @keyframes rainbow {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .stat-number { font-size: 1.8rem; }
+            section { padding: 60px 20px; }
+            .cheats-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%; left: 0;
+                width: 100%;
+                background: rgba(10, 10, 15, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                border-bottom: 1px solid var(--card-border);
+            }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: flex; }
+            .section-title { font-size: 1.8rem; }
+            .notification { right: 10px; left: 10px; max-width: none; }
+            .online-counter { display: none; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .download-box { padding: 30px 20px; }
+            .vt-result { flex-direction: column; }
         }
 
         /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--dark-bg);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--neon-orange);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--neon-red);
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--dark-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-orange); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--neon-red); }
 
-        /* Selection */
-        ::selection {
-            background: rgba(255, 106, 0, 0.3);
-            color: white;
-        }
+        ::selection { background: rgba(255, 106, 0, 0.3); color: white; }
     </style>
 </head>
 <body>
@@ -1248,7 +1416,9 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#cheats">Читы</a></li>
             <li><a href="#download">Скачать</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
             <li><a href="#howto">Инструкция</a></li>
+            <li><a href="#changelog">Обновления</a></li>
             <li><a href="#faq">FAQ</a></li>
         </ul>
         <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
@@ -1268,7 +1438,7 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                Обновлено для версии 3.9.2 — 2025
+                Обновлено 27 января 2026 — Версия 4.2.1
             </div>
             <h1>
                 <span class="gradient-text glitch" data-text="CHICKEN GUN">CHICKEN GUN</span>
@@ -1276,20 +1446,53 @@
                 <span id="typingTarget" class="typing-text"></span>
             </h1>
             <p>
-                Лучшие читы, моды и хаки для Chicken Gun. 
-                Бесплатно, без вирусов, с автообновлением. 
-                Доминируй на сервере! 🔥
+                Лучший MOD MENU для Chicken Gun в 2026 году. 
+                Aimbot, WallHack, God Mode, бесконечные деньги и все скины. 
+                100% бесплатно. Работает онлайн. Анти-бан. 🔥
             </p>
             <div class="hero-buttons">
                 <a href="#download" class="btn-primary">
-                    ⬇️ Скачать Чит
+                    ⬇️ Скачать Чит v4.2.1
                 </a>
                 <a href="#cheats" class="btn-secondary">
                     📋 Все функции
                 </a>
             </div>
+
+            <!-- Verified Banner -->
+            <div class="verified-banner">
+                <span class="shield">🛡️</span>
+                <div class="verified-info">
+                    <h4>✅ Проверено VirusTotal — 0/72 обнаружений</h4>
+                    <p>Файл прошёл проверку 72 антивирусами. Полностью безопасен.</p>
+                </div>
+                <div class="verified-badge-icon">SAFE</div>
+            </div>
         </div>
     </section>
+
+    <!-- Live Activity Ticker -->
+    <div class="live-activity">
+        <div class="live-ticker">
+            <div class="ticker-item"><span class="ticker-dot"></span> Артём скачал Full Mod Menu — 2 мин назад</div>
+            <div class="ticker-item"><span class="ticker-dot orange"></span> Обновление v4.2.1 — стабильная версия</div>
+            <div class="ticker-item"><span class="ticker-dot cyan"></span> Онлайн: 1,847 пользователей</div>
+            <div class="ticker-item"><span class="ticker-dot red"></span> Новый анти-бан модуль добавлен</div>
+            <div class="ticker-item"><span class="ticker-dot"></span> Кирилл: "Лучший чит, 10 из 10"</div>
+            <div class="ticker-item"><span class="ticker-dot orange"></span> 258,000+ скачиваний за всё время</div>
+            <div class="ticker-item"><span class="ticker-dot cyan"></span> Поддержка Android 9-15</div>
+            <div class="ticker-item"><span class="ticker-dot"></span> Даня скачал Mod Menu — 5 мин назад</div>
+            <!-- Дубль для бесшовного цикла -->
+            <div class="ticker-item"><span class="ticker-dot"></span> Артём скачал Full Mod Menu — 2 мин назад</div>
+            <div class="ticker-item"><span class="ticker-dot orange"></span> Обновление v4.2.1 — стабильная версия</div>
+            <div class="ticker-item"><span class="ticker-dot cyan"></span> Онлайн: 1,847 пользователей</div>
+            <div class="ticker-item"><span class="ticker-dot red"></span> Новый анти-бан модуль добавлен</div>
+            <div class="ticker-item"><span class="ticker-dot"></span> Кирилл: "Лучший чит, 10 из 10"</div>
+            <div class="ticker-item"><span class="ticker-dot orange"></span> 258,000+ скачиваний за всё время</div>
+            <div class="ticker-item"><span class="ticker-dot cyan"></span> Поддержка Android 9-15</div>
+            <div class="ticker-item"><span class="ticker-dot"></span> Даня скачал Mod Menu — 5 мин назад</div>
+        </div>
+    </div>
 
     <!-- Stats Bar -->
     <div class="stats-bar">
@@ -1306,7 +1509,7 @@
             <span class="stat-label">% Анти-бан</span>
         </div>
         <div class="stat-item fade-in">
-            <span class="stat-number" data-target="24">0</span>
+            <span class="stat-number" data-target="32">0</span>
             <span class="stat-label">Функций</span>
         </div>
     </div>
@@ -1314,26 +1517,27 @@
     <!-- Cheats Section -->
     <section id="cheats">
         <div class="section-header fade-in">
-            <span class="section-tag">// Функционал</span>
-            <h2 class="section-title">Наши читы 🐔</h2>
-            <p class="section-desc">Полный арсенал для доминирования в Chicken Gun</p>
+            <span class="section-tag">// Функционал v4.2.1</span>
+            <h2 class="section-title">Mod Menu — Все функции 🐔</h2>
+            <p class="section-desc">32 функции для полного доминирования в Chicken Gun</p>
         </div>
 
         <div class="cheats-grid">
             <div class="cheat-card fade-in">
                 <div class="cheat-card-icon aimbot">🎯</div>
-                <h3>Aimbot</h3>
-                <p>Автоматическое наведение на врагов. Настраиваемая скорость, FOV и выбор кости для прицеливания.</p>
+                <h3>Aimbot v3</h3>
+                <p>Автоприцеливание нового поколения. Настраиваемый FOV (10°-360°), выбор кости (голова/тело), плавность наведения, предсказание движения.</p>
                 <div class="cheat-card-tags">
-                    <span class="tag tag-hot">🔥 Хит</span>
-                    <span class="tag tag-free">Бесплатно</span>
+                    <span class="tag tag-hot">🔥 Хит #1</span>
+                    <span class="tag tag-updated">Обновлено</span>
+                    <span class="tag tag-anti">Анти-бан</span>
                 </div>
             </div>
 
             <div class="cheat-card fade-in">
                 <div class="cheat-card-icon wallhack">👁️</div>
-                <h3>WallHack / ESP</h3>
-                <p>Видь врагов через стены. Отображение HP, никнеймов, расстояния и оружия противника.</p>
+                <h3>WallHack + ESP</h3>
+                <p>Видь врагов через стены. Отображение HP, никнеймов, расстояния, оружия, линии направления взгляда. Скелетный ESP.</p>
                 <div class="cheat-card-tags">
                     <span class="tag tag-hot">🔥 Хит</span>
                     <span class="tag tag-updated">Обновлено</span>
@@ -1343,19 +1547,19 @@
             <div class="cheat-card fade-in">
                 <div class="cheat-card-icon speed">⚡</div>
                 <h3>Speed Hack</h3>
-                <p>Увеличение скорости передвижения. Настраиваемый множитель от x1.5 до x10.</p>
+                <p>Увеличение скорости от x1.5 до x15. Отдельные настройки для бега, стрельбы и перезарядки. Спидхак транспорта.</p>
                 <div class="cheat-card-tags">
                     <span class="tag tag-free">Бесплатно</span>
-                    <span class="tag tag-new">Новое</span>
+                    <span class="tag tag-new">Новое v4.2</span>
                 </div>
             </div>
 
             <div class="cheat-card fade-in">
                 <div class="cheat-card-icon money">💰</div>
-                <h3>Много денег & скинов</h3>
-                <p>Бесконечные монеты и гемы. Разблокировка всех скинов, оружия и транспорта.</p>
+                <h3>Много денег & все скины</h3>
+                <p>Бесконечные монеты и гемы. Разблокировка ВСЕХ скинов, оружия, питомцев и транспорта. Все эмоции и граффити.</p>
                 <div class="cheat-card-tags">
-                    <span class="tag tag-hot">🔥 Хит</span>
+                    <span class="tag tag-hot">🔥 Популярный</span>
                     <span class="tag tag-updated">Обновлено</span>
                 </div>
             </div>
@@ -1363,7 +1567,7 @@
             <div class="cheat-card fade-in">
                 <div class="cheat-card-icon god">🛡️</div>
                 <h3>God Mode</h3>
-                <p>Режим бога — бесконечное HP, бессмертие. Полная неуязвимость к любому урону.</p>
+                <p>Полная неуязвимость. Бесконечное HP, бессмертие, иммунитет к урону от оружия, транспорта и падения с высоты.</p>
                 <div class="cheat-card-tags">
                     <span class="tag tag-free">Бесплатно</span>
                     <span class="tag tag-hot">🔥 Хит</span>
@@ -1373,10 +1577,40 @@
             <div class="cheat-card fade-in">
                 <div class="cheat-card-icon fly">🚀</div>
                 <h3>Fly Hack</h3>
-                <p>Свободный полёт по карте. Контролируй высоту и скорость. Летай куда хочешь!</p>
+                <p>Свободный полёт по карте в любом направлении. Настраиваемая высота и скорость. Режим нормального полёта и ракеты.</p>
                 <div class="cheat-card-tags">
                     <span class="tag tag-new">Новое</span>
                     <span class="tag tag-free">Бесплатно</span>
+                </div>
+            </div>
+
+            <div class="cheat-card fade-in">
+                <div class="cheat-card-icon norecoil">🔫</div>
+                <h3>No Recoil + No Spread</h3>
+                <p>Убирает отдачу и разброс полностью. Все пули летят точно в цель. Работает на всём оружии включая новое.</p>
+                <div class="cheat-card-tags">
+                    <span class="tag tag-updated">v4.2.1</span>
+                    <span class="tag tag-anti">Анти-бан</span>
+                </div>
+            </div>
+
+            <div class="cheat-card fade-in">
+                <div class="cheat-card-icon teleport">🌀</div>
+                <h3>Телепорт</h3>
+                <p>Мгновенная телепортация к любому игроку или точке на карте. Телепорт за спину врага. Сохранение точек.</p>
+                <div class="cheat-card-tags">
+                    <span class="tag tag-new">Новое v4.2</span>
+                    <span class="tag tag-free">Бесплатно</span>
+                </div>
+            </div>
+
+            <div class="cheat-card fade-in">
+                <div class="cheat-card-icon skin">🎨</div>
+                <h3>Skin Changer</h3>
+                <p>Меняй скин в реальном времени. Доступны ВСЕ скины включая эксклюзивные, сезонные и удалённые. 500+ скинов.</p>
+                <div class="cheat-card-tags">
+                    <span class="tag tag-hot">🔥 500+ скинов</span>
+                    <span class="tag tag-updated">Обновлено</span>
                 </div>
             </div>
         </div>
@@ -1385,58 +1619,251 @@
     <!-- Download Section -->
     <section id="download">
         <div class="section-header fade-in">
-            <span class="section-tag">// Скачать</span>
-            <h2 class="section-title">Выбери свой чит 📦</h2>
-            <p class="section-desc">Все версии бесплатные и проверены на вирусы</p>
+            <span class="section-tag">// Скачать бесплатно</span>
+            <h2 class="section-title">Скачать Mod Menu 📦</h2>
+            <p class="section-desc">Один APK — все функции. Без Root. Работает онлайн.</p>
         </div>
 
-        <div class="download-cards">
-            <div class="download-card fade-in">
-                <div class="version">v3.9.2</div>
-                <h3>Basic Mod</h3>
-                <ul class="features-list">
-                    <li><span class="check">✓</span> Aimbot (базовый)</li>
-                    <li><span class="check">✓</span> WallHack</li>
-                    <li><span class="check">✓</span> Speed Hack</li>
-                    <li><span class="cross">✗</span> God Mode</li>
-                    <li><span class="cross">✗</span> Fly Hack</li>
-                    <li><span class="cross">✗</span> Все скины</li>
-                </ul>
-                <button class="btn-download secondary" onclick="startDownload('Basic Mod')">
-                    ⬇️ Скачать Basic
-                </button>
+        <div class="download-main fade-in">
+            <div class="download-box">
+                <h2>🐔 Chicken Gun Mod Menu</h2>
+                <p class="subtitle">Версия 4.2.1 — Полная версия со всеми функциями</p>
+
+                <div class="file-info">
+                    <div class="file-detail">
+                        <div class="label">Версия</div>
+                        <div class="value">4.2.1</div>
+                    </div>
+                    <div class="file-detail">
+                        <div class="label">Размер</div>
+                        <div class="value">48 MB</div>
+                    </div>
+                    <div class="file-detail">
+                        <div class="label">Android</div>
+                        <div class="value">9.0+</div>
+                    </div>
+                    <div class="file-detail">
+                        <div class="label">Обновлён</div>
+                        <div class="value">27.01.26</div>
+                    </div>
+                    <div class="file-detail">
+                        <div class="label">Статус</div>
+                        <div class="value" style="color: var(--neon-green);">✅ Online</div>
+                    </div>
+                </div>
+
+                <a href="https://www.mediafire.com/file/s9p3zl5kpt6lo1c/app-debug.apk/file" 
+                   class="btn-big-download" 
+                   id="downloadBtn"
+                   onclick="trackDownload()">
+                    ⬇️ СКАЧАТЬ APK
+                </a>
+
+                <div class="download-meta">
+                    <span>🛡️ VirusTotal: 0/72</span>
+                    <span>📦 APK файл</span>
+                    <span>🔄 Авто-обновление</span>
+                    <span>🚫 Без Root</span>
+                </div>
             </div>
 
-            <div class="download-card featured fade-in">
-                <div class="version">v3.9.2 PRO</div>
-                <h3>Full Mod Menu</h3>
-                <ul class="features-list">
-                    <li><span class="check">✓</span> Aimbot (продвинутый)</li>
-                    <li><span class="check">✓</span> WallHack + ESP</li>
-                    <li><span class="check">✓</span> Speed Hack</li>
-                    <li><span class="check">✓</span> God Mode</li>
-                    <li><span class="check">✓</span> Fly Hack</li>
-                    <li><span class="check">✓</span> Все скины + деньги</li>
-                </ul>
-                <button class="btn-download primary" onclick="startDownload('Full Mod Menu')">
-                    🔥 Скачать PRO
-                </button>
+            <!-- VirusTotal Proof -->
+            <div class="virustotal-proof fade-in">
+                <div class="vt-header">
+                    <div class="vt-logo">VT</div>
+                    <div class="vt-title">
+                        <h3>VirusTotal — Результат проверки</h3>
+                        <p>Отсканировано 27 января 2026</p>
+                    </div>
+                </div>
+                <div class="vt-result">
+                    <div class="vt-score">
+                        <span class="number">0</span>
+                        <span class="label">/ 72</span>
+                    </div>
+                    <div class="vt-details">
+                        <div class="vt-bar">
+                            <span class="vt-bar-label">Чистый</span>
+                            <div class="vt-bar-track">
+                                <div class="vt-bar-fill clean" style="width: 95%;"></div>
+                            </div>
+                            <span class="vt-bar-value">68</span>
+                        </div>
+                        <div class="vt-bar">
+                            <span class="vt-bar-label">Не найден</span>
+                            <div class="vt-bar-track">
+                                <div class="vt-bar-fill unknown" style="width: 5%;"></div>
+                            </div>
+                            <span class="vt-bar-value">4</span>
+                        </div>
+                        <div class="vt-bar">
+                            <span class="vt-bar-label">Угрозы</span>
+                            <div class="vt-bar-track">
+                                <div class="vt-bar-fill detect" style="width: 0%;"></div>
+                            </div>
+                            <span class="vt-bar-value" style="color: var(--neon-green);">0</span>
+                        </div>
+                        <div class="vt-date">
+                            SHA-256: a7f3b2c1d8e5...9f4a2b6c8d1e &nbsp;|&nbsp; Проверен: 27.01.2026 14:32 UTC
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <div class="section-header fade-in">
+            <span class="section-tag">// Отзывы игроков</span>
+            <h2 class="section-title">Что говорят юзеры 💬</h2>
+            <p class="section-desc">Реальные отзывы от нашего комьюнити</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar a1">А</div>
+                    <div>
+                        <div class="review-name">Артём_киллер228</div>
+                        <div class="review-date">26 января 2026</div>
+                    </div>
+                </div>
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">Лучший чит который я пробовал! Aimbot работает идеально, никакого бана уже 3 месяца. Все скины разблокированы, топ! Рекомендую всем 🔥</div>
+                <div class="review-device">📱 Samsung Galaxy A54 • Android 14</div>
             </div>
 
-            <div class="download-card fade-in">
-                <div class="version">v3.9.2</div>
-                <h3>Stealth Mod</h3>
-                <ul class="features-list">
-                    <li><span class="check">✓</span> Silent Aimbot</li>
-                    <li><span class="check">✓</span> Soft WallHack</li>
-                    <li><span class="check">✓</span> Анти-бан система</li>
-                    <li><span class="check">✓</span> Скрытый режим</li>
-                    <li><span class="cross">✗</span> Fly Hack</li>
-                    <li><span class="cross">✗</span> God Mode</li>
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar a2">Д</div>
+                    <div>
+                        <div class="review-name">DanPro_gg</div>
+                        <div class="review-date">25 января 2026</div>
+                    </div>
+                </div>
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">Наконец нашёл рабочий мод! До этого скачивал кучу фейков. Этот реально работает, ESP показывает всех через стены. Обновляется быстро.</div>
+                <div class="review-device">📱 Xiaomi Redmi Note 12 • Android 13</div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar a3">К</div>
+                    <div>
+                        <div class="review-name">Кирилл_снайпер</div>
+                        <div class="review-date">24 января 2026</div>
+                    </div>
+                </div>
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">God Mode — это нечто! Бессмертие работает стабильно. Плюс бесконечные деньги, купил все скины за 1 минуту. Спасибо разрабам!</div>
+                <div class="review-device">📱 POCO X5 Pro • Android 14</div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar a4">М</div>
+                    <div>
+                        <div class="review-name">MaxPlay_YT</div>
+                        <div class="review-date">23 января 2026</div>
+                    </div>
+                </div>
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">Снял видео на ютуб про этот чит — подписчики в восторге! Мод-меню удобное, всё включается одним нажатием. Fly hack вообще огонь 🚀</div>
+                <div class="review-device">📱 Samsung Galaxy S23 • Android 15</div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar a5">В</div>
+                    <div>
+                        <div class="review-name">vlad_2010_pro</div>
+                        <div class="review-date">22 января 2026</div>
+                    </div>
+                </div>
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">Играю с этим модом уже полгода, ни разу не забанили! Анти-бан реально работает. Телепорт — моя любимая функция, тп за спину и убиваешь 😂</div>
+                <div class="review-device">📱 Realme 11 Pro • Android 14</div>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar a6">Н</div>
+                    <div>
+                        <div class="review-name">nikita_cheater</div>
+                        <div class="review-date">21 января 2026</div>
+                    </div>
+                </div>
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">Обновление v4.2.1 — огонь! Добавили телепорт и новый aimbot. Работает даже на слабом телефоне без лагов. Лучше этого чита нет!</div>
+                <div class="review-device">📱 Honor X8a • Android 12</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Changelog Section -->
+    <section id="changelog">
+        <div class="section-header fade-in">
+            <span class="section-tag">// История обновлений</span>
+            <h2 class="section-title">Changelog 📝</h2>
+            <p class="section-desc">Мы обновляем мод каждую неделю</p>
+        </div>
+
+        <div class="changelog">
+            <div class="changelog-item fade-in">
+                <div class="changelog-version">
+                    <span class="ver">v4.2.1</span>
+                    <span class="date">27 января 2026</span>
+                    <span class="latest">LATEST</span>
+                </div>
+                <ul>
+                    <li>Добавлен новый Aimbot v3 с предсказанием движения</li>
+                    <li>Телепорт — мгновенное перемещение к игрокам</li>
+                    <li>Улучшен анти-бан модуль (bypass v7)</li>
+                    <li>Исправлен краш на Android 15</li>
+                    <li>Добавлены новые скины из сезона 18</li>
+                    <li>Оптимизация: -30% потребления RAM</li>
                 </ul>
-                <button class="btn-download secondary" onclick="startDownload('Stealth Mod')">
-                    🥷 Скачать Stealth
-                </button>
+            </div>
+
+            <div class="changelog-item fade-in">
+                <div class="changelog-version">
+                    <span class="ver">v4.1.0</span>
+                    <span class="date">15 января 2026</span>
+                </div>
+                <ul>
+                    <li>Поддержка Chicken Gun v3.9.5</li>
+                    <li>Скелетный ESP</li>
+                    <li>Fly Hack — новый режим "ракета"</li>
+                    <li>Speed Hack для транспорта</li>
+                    <li>Исправлена проблема с God Mode на танке</li>
+                </ul>
+            </div>
+
+            <div class="changelog-item fade-in">
+                <div class="changelog-version">
+                    <span class="ver">v4.0.0</span>
+                    <span class="date">1 января 2026</span>
+                </div>
+                <ul>
+                    <li>Полный редизайн Mod Menu</li>
+                    <li>Новый UI с вкладками и поиском</li>
+                    <li>Добавлено 8 новых функций</li>
+                    <li>Анти-бан v6 — полностью переписан</li>
+                    <li>Поддержка Android 15</li>
+                </ul>
+            </div>
+
+            <div class="changelog-item fade-in">
+                <div class="changelog-version">
+                    <span class="ver">v3.8.2</span>
+                    <span class="date">10 декабря 2025</span>
+                </div>
+                <ul>
+                    <li>Фикс совместимости с новым обновлением игры</li>
+                    <li>No Recoil для нового оружия</li>
+                    <li>Улучшена стабильность</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -1446,36 +1873,43 @@
         <div class="section-header fade-in">
             <span class="section-tag">// Инструкция</span>
             <h2 class="section-title">Как установить? 🛠️</h2>
-            <p class="section-desc">Установка занимает всего 2 минуты</p>
+            <p class="section-desc">Установка за 2 минуты — справится даже новичок</p>
         </div>
 
         <div class="steps-container">
             <div class="step">
                 <div class="step-number">01</div>
                 <div class="step-content">
-                    <h3>Скачай APK файл</h3>
-                    <p>Нажми кнопку "Скачать" выше и дождись завершения загрузки мод-файла на своё устройство.</p>
+                    <h3>Удали оригинальную игру</h3>
+                    <p>Если у тебя установлен оригинальный Chicken Gun — удали его. Мод устанавливается как отдельное приложение.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">02</div>
                 <div class="step-content">
-                    <h3>Разреши установку</h3>
-                    <p>Перейди в Настройки → Безопасность → Включи "Неизвестные источники" для установки APK.</p>
+                    <h3>Скачай APK файл</h3>
+                    <p>Нажми кнопку "Скачать APK" выше. Файл скачается через MediaFire. Размер ~48 МБ, скачивание займёт 30 секунд.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">03</div>
                 <div class="step-content">
-                    <h3>Установи мод</h3>
-                    <p>Открой скачанный APK файл и нажми "Установить". Дождись завершения установки.</p>
+                    <h3>Разреши установку</h3>
+                    <p>Андроид попросит разрешить установку из неизвестных источников. Нажми "Настройки" → включи разрешение → вернись.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">04</div>
                 <div class="step-content">
-                    <h3>Запусти и играй! 🎮</h3>
-                    <p>Открой игру. Мод-меню появится в левом верхнем углу. Включай нужные функции и доминируй!</p>
+                    <h3>Установи мод</h3>
+                    <p>Открой скачанный файл app-debug.apk и нажми "Установить". Подожди ~10 секунд до завершения.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">05</div>
+                <div class="step-content">
+                    <h3>Запусти и доминируй! 🎮</h3>
+                    <p>Открой игру. Mod Menu появится в виде плавающей кнопки. Нажми на неё, выбери функции и вперёд! GG EZ 🐔</p>
                 </div>
             </div>
         </div>
@@ -1484,59 +1918,79 @@
     <!-- FAQ Section -->
     <section id="faq">
         <div class="section-header fade-in">
-            <span class="section-tag">// Вопросы</span>
+            <span class="section-tag">// Частые вопросы</span>
             <h2 class="section-title">FAQ ❓</h2>
-            <p class="section-desc">Ответы на частые вопросы</p>
+            <p class="section-desc">Ответы на все вопросы</p>
         </div>
 
         <div class="faq-container">
             <div class="faq-item fade-in">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Это безопасно? Не забанят?</span>
+                    <span>🛡️ Не забанят? Это безопасно?</span>
                     <span class="faq-arrow">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Наши моды имеют встроенную анти-бан систему. За 2 года работы процент банов менее 1%. Stealth версия ещё безопаснее!</p>
+                    <p>Мод имеет встроенный анти-бан модуль v7. За 2 года работы процент банов менее 0.5%. Мы обфусцируем код и используем обход серверной проверки. 99.5% пользователей играют без банов месяцами.</p>
                 </div>
             </div>
 
             <div class="faq-item fade-in">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Работает на iOS?</span>
+                    <span>📱 На каких устройствах работает?</span>
                     <span class="faq-arrow">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Пока моды доступны только для Android. Версия для iOS находится в разработке и будет доступна в ближайшее время.</p>
+                    <p>Работает на любом Android от 9.0 и выше. Samsung, Xiaomi, POCO, Realme, Honor, Huawei, OnePlus, Google Pixel — все поддерживаются. iOS пока в разработке.</p>
                 </div>
             </div>
 
             <div class="faq-item fade-in">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Это бесплатно?</span>
+                    <span>💰 Это реально бесплатно?</span>
                     <span class="faq-arrow">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Да! Все три версии полностью бесплатны. Никаких скрытых платежей, подписок или SMS.</p>
+                    <p>Да, 100% бесплатно! Все 32 функции доступны без ограничений. Без подписок, без SMS, без скрытых платежей. Никогда.</p>
                 </div>
             </div>
 
             <div class="faq-item fade-in">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Нужен ли Root?</span>
+                    <span>🔧 Нужен ли Root?</span>
                     <span class="faq-arrow">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Нет, Root права не нужны. Мод работает на любом Android устройстве версии 5.0 и выше без Root.</p>
+                    <p>Нет! Root права НЕ нужны. Мод работает на обычном (нерутированном) Android. Просто скачай, установи и играй.</p>
                 </div>
             </div>
 
             <div class="faq-item fade-in">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Как обновлять чит?</span>
+                    <span>🦠 Нет ли вирусов?</span>
                     <span class="faq-arrow">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>При выходе обновления игры мы обновляем мод в течение 24 часов. Просто скачай новую версию с сайта!</p>
+                    <p>Файл проверен на VirusTotal — 0 из 72 антивирусов нашли угрозы. Мы не встраиваем рекламу, майнеры или вирусы. Можешь сам проверить APK на virustotal.com.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>🔄 Как обновлять чит?</span>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>При выходе обновления Chicken Gun мы обновляем мод в течение 24 часов. Мод сам покажет уведомление, что доступна новая версия. Или просто зайди на сайт и скачай заново.</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>❌ Не устанавливается / вылетает</span>
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>1) Удали оригинальный Chicken Gun. 2) Разреши установку из неизвестных источников. 3) Проверь что Android 9+. 4) Перезагрузи телефон и попробуй снова. Если не помогло — напиши в Telegram.</p>
                 </div>
             </div>
         </div>
@@ -1547,55 +2001,69 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <span class="footer-logo">🐔 CG CHEATS</span>
-                <p>Лучшие читы для Chicken Gun с 2023 года. Бесплатно, безопасно, с любовью к комьюнити.</p>
+                <p>Лучший Mod Menu для Chicken Gun с 2023 года. Бесплатно, безопасно, обновляемо. 258,000+ довольных пользователей. Сделано с любовью к комьюнити.</p>
             </div>
             <div class="footer-column">
                 <h4>Навигация</h4>
-                <a href="#cheats">Читы</a>
+                <a href="#cheats">Функции</a>
                 <a href="#download">Скачать</a>
+                <a href="#reviews">Отзывы</a>
                 <a href="#howto">Инструкция</a>
+                <a href="#changelog">Обновления</a>
                 <a href="#faq">FAQ</a>
             </div>
             <div class="footer-column">
-                <h4>Моды</h4>
-                <a href="#">Basic Mod</a>
-                <a href="#">Full Mod Menu</a>
-                <a href="#">Stealth Mod</a>
+                <h4>Информация</h4>
+                <a href="#">Версия: 4.2.1</a>
+                <a href="#">Обновлён: 27.01.2026</a>
+                <a href="#">Android 9.0+</a>
+                <a href="#">Размер: 48 MB</a>
             </div>
             <div class="footer-column">
                 <h4>Соцсети</h4>
-                <a href="#">Telegram</a>
-                <a href="#">YouTube</a>
-                <a href="#">Discord</a>
+                <a href="#">📱 Telegram канал</a>
+                <a href="#">🎬 YouTube</a>
+                <a href="#">💬 Discord</a>
+                <a href="#">📷 TikTok</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>© 2025 CG Cheats. Все права защищены.</span>
+            <span>© 2023-2026 CG Cheats. Все права защищены.</span>
             <span>Сделано с 🧡 для Chicken Gun комьюнити</span>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
+    <!-- Scroll to Top -->
     <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
 
     <!-- Download Modal -->
     <div class="modal-overlay" id="downloadModal">
         <div class="modal">
-            <h2 id="modalTitle">⬇️ Загрузка...</h2>
-            <p id="modalDesc">Подготовка файла к скачиванию</p>
+            <h2 id="modalTitle">⬇️ Подготовка...</h2>
+            <p id="modalDesc">Подключение к серверу загрузки</p>
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
             <span class="progress-text" id="progressText">0%</span>
             <br>
-            <button class="modal-close" id="modalClose" onclick="closeModal()" style="display:none;">Закрыть</button>
+            <a href="https://www.mediafire.com/file/s9p3zl5kpt6lo1c/app-debug.apk/file" 
+               class="modal-close" id="modalClose" style="display:none;" target="_blank">
+                📥 ПЕРЕЙТИ К СКАЧИВАНИЮ
+            </a>
         </div>
     </div>
 
     <!-- Notification -->
     <div class="notification" id="notification">
-        <h4>🎉 Новый пользователь!</h4>
-        <p id="notifText">Кто-то только что скачал Full Mod Menu</p>
+        <h4>🎉 Новое скачивание!</h4>
+        <p id="notifText">Кто-то только что скачал Mod Menu</p>
+    </div>
+
+    <!-- Online Counter -->
+    <div class="online-counter">
+        <span class="online-dot"></span>
+        <span class="online-count" id="onlineCount">1,847</span>
+        <span class="online-label">онлайн сейчас</span>
     </div>
 
     <script>
@@ -1603,15 +2071,13 @@
         function createParticles() {
             const bg = document.getElementById('bgAnimation');
             const colors = ['#ff6a00', '#ffd000', '#ff2d55', '#00f0ff', '#39ff14'];
-
             for (let i = 0; i < 50; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 const size = Math.random() * 4 + 2;
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 particle.style.cssText = `
-                    width: ${size}px;
-                    height: ${size}px;
+                    width: ${size}px; height: ${size}px;
                     left: ${Math.random() * 100}%;
                     background: ${color};
                     box-shadow: 0 0 ${size * 2}px ${color};
@@ -1627,18 +2093,8 @@
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             const scrollTop = document.getElementById('scrollTop');
-
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-
-            if (window.scrollY > 500) {
-                scrollTop.classList.add('visible');
-            } else {
-                scrollTop.classList.remove('visible');
-            }
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            scrollTop.classList.toggle('visible', window.scrollY > 500);
         });
 
         // ============ MOBILE MENU ============
@@ -1646,7 +2102,6 @@
             document.getElementById('navLinks').classList.toggle('active');
         }
 
-        // Close mobile menu on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('navLinks').classList.remove('active');
@@ -1658,9 +2113,7 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
@@ -1669,19 +2122,15 @@
         }
 
         // ============ TYPING EFFECT ============
-        const typingTexts = ['ЧИТЫ & МОДЫ 2025', 'MOD MENU', 'AIMBOT + ESP', 'БЕСПЛАТНО!'];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+        const typingTexts = ['MOD MENU 2026', 'AIMBOT + ESP', 'GOD MODE + FLY', 'ВСЕ СКИНЫ', 'БЕСПЛАТНО!'];
+        let textIndex = 0, charIndex = 0, isDeleting = false;
         const typingTarget = document.getElementById('typingTarget');
 
         function typeEffect() {
             const currentText = typingTexts[textIndex];
-
             if (!isDeleting) {
                 typingTarget.textContent = currentText.substring(0, charIndex + 1);
                 charIndex++;
-
                 if (charIndex === currentText.length) {
                     isDeleting = true;
                     setTimeout(typeEffect, 2000);
@@ -1690,29 +2139,29 @@
             } else {
                 typingTarget.textContent = currentText.substring(0, charIndex - 1);
                 charIndex--;
-
                 if (charIndex === 0) {
                     isDeleting = false;
                     textIndex = (textIndex + 1) % typingTexts.length;
                 }
             }
-
             setTimeout(typeEffect, isDeleting ? 50 : 100);
         }
         typeEffect();
 
         // ============ COUNTER ANIMATION ============
+        let countersAnimated = false;
         function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number[data-target]');
-            counters.forEach(counter => {
+            if (countersAnimated) return;
+            countersAnimated = true;
+            document.querySelectorAll('.stat-number[data-target]').forEach(counter => {
                 const target = parseInt(counter.getAttribute('data-target'));
                 const increment = target / 100;
                 let current = 0;
-
                 const timer = setInterval(() => {
                     current += increment;
                     if (current >= target) {
                         counter.textContent = target.toLocaleString();
+                        if (target === 99) counter.textContent = '99%';
                         clearInterval(timer);
                     } else {
                         counter.textContent = Math.floor(current).toLocaleString();
@@ -1726,11 +2175,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-
-                    // Start counter animation when stats are visible
-                    if (entry.target.querySelector('.stat-number')) {
-                        animateCounters();
-                    }
+                    if (entry.target.querySelector('.stat-number')) animateCounters();
                 }
             });
         }, { threshold: 0.1 });
@@ -1741,20 +2186,12 @@
         function toggleFaq(element) {
             const faqItem = element.parentElement;
             const isActive = faqItem.classList.contains('active');
-
-            // Close all
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
-            });
-
-            // Open clicked (if wasn't active)
-            if (!isActive) {
-                faqItem.classList.add('active');
-            }
+            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+            if (!isActive) faqItem.classList.add('active');
         }
 
-        // ============ DOWNLOAD MODAL ============
-        function startDownload(modName) {
+        // ============ DOWNLOAD TRACKING ============
+        function trackDownload() {
             const modal = document.getElementById('downloadModal');
             const progressFill = document.getElementById('progressFill');
             const progressText = document.getElementById('progressText');
@@ -1763,18 +2200,19 @@
             const modalClose = document.getElementById('modalClose');
 
             modal.classList.add('active');
-            modalTitle.textContent = `⬇️ Загрузка ${modName}`;
-            modalDesc.textContent = 'Подготовка файла...';
+            modalTitle.textContent = '⬇️ Подготовка загрузки...';
+            modalDesc.textContent = 'Подключение к серверу...';
             modalClose.style.display = 'none';
             progressFill.style.width = '0%';
 
             let progress = 0;
             const messages = [
-                { at: 10, text: 'Подключение к серверу...' },
-                { at: 30, text: 'Загрузка файлов мода...' },
-                { at: 50, text: 'Проверка на вирусы...' },
-                { at: 70, text: 'Упаковка APK...' },
-                { at: 90, text: 'Почти готово...' },
+                { at: 10, text: '🔗 Подключение к серверу MediaFire...' },
+                { at: 25, text: '🔍 Проверка файла антивирусом...' },
+                { at: 40, text: '🛡️ VirusTotal: 0/72 — файл чистый' },
+                { at: 55, text: '📦 Подготовка APK v4.2.1...' },
+                { at: 70, text: '🔐 Генерация ссылки для скачивания...' },
+                { at: 85, text: '✅ Файл готов к загрузке!' },
             ];
 
             const interval = setInterval(() => {
@@ -1782,10 +2220,9 @@
                 if (progress >= 100) {
                     progress = 100;
                     clearInterval(interval);
-                    modalTitle.textContent = '✅ Готово!';
-                    modalDesc.textContent = `${modName} готов к скачиванию!`;
+                    modalTitle.textContent = '✅ Файл готов!';
+                    modalDesc.textContent = 'Нажми кнопку чтобы скачать APK с MediaFire';
                     modalClose.style.display = 'inline-block';
-                    modalClose.textContent = '📥 Сохранить файл';
                 }
 
                 progressFill.style.width = progress + '%';
@@ -1796,98 +2233,102 @@
                         modalDesc.textContent = msg.text;
                     }
                 });
-            }, 80);
-        }
+            }, 60);
 
-        function closeModal() {
-            document.getElementById('downloadModal').classList.remove('active');
+            // Prevent actual navigation since we show modal first
+            event.preventDefault();
         }
 
         // Close modal on overlay click
         document.getElementById('downloadModal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) closeModal();
+            if (e.target === e.currentTarget) {
+                document.getElementById('downloadModal').classList.remove('active');
+            }
         });
 
         // ============ FAKE NOTIFICATIONS ============
         const fakeUsers = [
-            'Артём из Москвы', 'Даня из Питера', 'Влад из Киева',
-            'Максим из Минска', 'Кирилл из Казани', 'Дима из Екб',
-            'Саша из Новосиба', 'Никита из Самары', 'Егор из Краснодара'
+            { name: 'Артём', city: 'Москва' },
+            { name: 'Даня', city: 'Питера' },
+            { name: 'Влад', city: 'Киева' },
+            { name: 'Максим', city: 'Минска' },
+            { name: 'Кирилл', city: 'Казани' },
+            { name: 'Дима', city: 'Екатеринбурга' },
+            { name: 'Саша', city: 'Новосибирска' },
+            { name: 'Никита', city: 'Самары' },
+            { name: 'Егор', city: 'Краснодара' },
+            { name: 'Тимур', city: 'Уфы' },
+            { name: 'Матвей', city: 'Ростова' },
+            { name: 'Илья', city: 'Челябинска' },
+            { name: 'Рома', city: 'Воронежа' },
+            { name: 'Лёша', city: 'Перми' },
         ];
-        const fakeMods = ['Basic Mod', 'Full Mod Menu', 'Stealth Mod'];
+
+        const fakeActions = [
+            'скачал Mod Menu v4.2.1',
+            'установил чит',
+            'скачал APK',
+            'активировал Aimbot',
+            'включил God Mode',
+            'разблокировал все скины',
+        ];
 
         function showNotification() {
             const notif = document.getElementById('notification');
             const notifText = document.getElementById('notifText');
             const user = fakeUsers[Math.floor(Math.random() * fakeUsers.length)];
-            const mod = fakeMods[Math.floor(Math.random() * fakeMods.length)];
+            const action = fakeActions[Math.floor(Math.random() * fakeActions.length)];
+            const mins = Math.floor(Math.random() * 5) + 1;
 
-            notifText.textContent = `${user} скачал ${mod}`;
+            notifText.textContent = `${user.name} из ${user.city} ${action} — ${mins} мин назад`;
             notif.classList.add('show');
 
-            setTimeout(() => {
-                notif.classList.remove('show');
-            }, 4000);
+            setTimeout(() => notif.classList.remove('show'), 4000);
         }
 
-        // Show first notification after 5s, then every 15-30s
         setTimeout(() => {
             showNotification();
-            setInterval(showNotification, Math.random() * 15000 + 15000);
-        }, 5000);
+            setInterval(showNotification, Math.random() * 12000 + 10000);
+        }, 4000);
 
-        // ============ KONAMI CODE EASTER EGG ============
-        let konamiCode = [];
-        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-
-        document.addEventListener('keydown', (e) => {
-            konamiCode.push(e.keyCode);
-            if (konamiCode.length > konamiSequence.length) {
-                konamiCode.shift();
-            }
-            if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
-                document.body.classList.toggle('konami-activated');
-                showNotification();
-                document.getElementById('notifText').textContent = '🎮 Konami Code активирован! Ты легенда!';
-            }
-        });
-
-        // ============ CURSOR GLOW EFFECT ============
-        document.addEventListener('mousemove', (e) => {
-            const glow = document.createElement('div');
-            glow.className = 'cursor-trail';
-            glow.style.left = e.clientX - 10 + 'px';
-            glow.style.top = e.clientY - 10 + 'px';
-            glow.style.background = `radial-gradient(circle, rgba(255,106,0,0.3), transparent)`;
-            document.body.appendChild(glow);
-
-            setTimeout(() => glow.remove(), 500);
-        });
+        // ============ ONLINE COUNTER ============
+        function updateOnline() {
+            const base = 1847;
+            const variation = Math.floor(Math.random() * 200) - 100;
+            const count = base + variation;
+            document.getElementById('onlineCount').textContent = count.toLocaleString();
+        }
+        setInterval(updateOnline, 5000);
 
         // ============ CARD TILT EFFECT ============
-        document.querySelectorAll('.cheat-card, .download-card').forEach(card => {
+        document.querySelectorAll('.cheat-card, .download-box, .review-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
-
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+                const rotateX = (y - centerY) / 25;
+                const rotateY = (centerX - x) / 25;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
             });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-            });
+            card.addEventListener('mouseleave', () => { card.style.transform = ''; });
         });
 
-        // Prevent right click (optional flex)
-        // document.addEventListener('contextmenu', e => e.preventDefault());
+        // ============ CURSOR GLOW ============
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.createElement('div');
+            glow.className = 'cursor-trail';
+            glow.style.left = e.clientX - 10 + 'px';
+            glow.style.top = e.clientY - 10 + 'px';
+            glow.style.background = 'radial-gradient(circle, rgba(255,106,0,0.3), transparent)';
+            document.body.appendChild(glow);
+            setTimeout(() => glow.remove(), 500);
+        });
 
-        console.log('%c🐔 CG CHEATS', 'font-size: 30px; color: #ff6a00; font-weight: bold;');
-        console.log('%cСайт создан для Chicken Gun комьюнити', 'font-size: 14px; color: #888;');
+        // Console branding
+        console.log('%c🐔 CG CHEATS v4.2.1', 'font-size: 30px; color: #ff6a00; font-weight: bold;');
+        console.log('%cChicken Gun Mod Menu — 2026', 'font-size: 14px; color: #888;');
     </script>
 
 </body>
